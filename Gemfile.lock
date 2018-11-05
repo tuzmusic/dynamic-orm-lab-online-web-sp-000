@@ -16,4 +16,8 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.17.1
+=======
+   1.16.6
+>>>>>>> 287504f428febe240b5763056a2374a6aa39579d
