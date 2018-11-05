@@ -1,5 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
+require 'pry'
 
 class InteractiveRecord
 
@@ -29,6 +30,7 @@ class InteractiveRecord
   end
 
   def values_for_insert
+<<<<<<< HEAD
     self.class.column_names
     .select {|n| n != 'id'}
     .map {|col| "'#{self.send(col)}'"}
@@ -51,6 +53,11 @@ class InteractiveRecord
   def self.find_by(attr)
     sql = "SELECT * FROM #{self.new.table_name_for_insert} WHERE #{attr.keys.first} = '#{attr[attr.keys.first]}'"
     DB[:conn].execute(sql)
+=======
+    self.class.column_names.map do |col|
+      self.send("'#{col}'")
+    end
+>>>>>>> 657b46a13bcd78258e4cb39bb10f1c0b89598ee7
   end
 
 end
